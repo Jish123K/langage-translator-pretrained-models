@@ -85,4 +85,26 @@ root = tk.Tk()
 translator = TranslatorGUI(root)
 
 root.mainloop()
+import marianmt
+
+# Load the model
+
+model = marianmt.Translator(
+
+    source_language="en", target_language="fr",
+
+    model_name="Helsinki-NLP/opus-mt-en-fr")
+
+# Define the input text
+
+input_text = "This is a test sentence to translate."
+
+# Translate the text
+
+translation = model.translate(input_text)
+
+# Print the translated text
+
+print(translation)
+
 
